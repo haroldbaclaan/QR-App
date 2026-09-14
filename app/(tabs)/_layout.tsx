@@ -1,85 +1,78 @@
-import {
-  FontAwesome,
-  Ionicons,
-  MaterialIcons,
-} from "@expo/vector-icons";
-import { Tabs } from "expo-router";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "#24292F",
-        },
-
-        headerTintColor: "#fff",
-
-        tabBarStyle: {
-          backgroundColor: "#24292F",
-          height: 65,
-        },
-
-        tabBarActiveTintColor: "#FFC107",
-
-        tabBarInactiveTintColor: "#999",
+        tabBarActiveTintColor: '#ffd33d',
+        headerStyle: { backgroundColor: '#25292e' },
+        headerShadowVisible: false,
+        headerTintColor: '#fff',
+        tabBarStyle: { backgroundColor: '#25292e' },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
-
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome
-              name="home"
-              size={size}
+          title: 'Home',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'home-sharp' : 'home-outline'}
               color={color}
+              size={24}
             />
           ),
         }}
       />
-
       <Tabs.Screen
         name="scan"
         options={{
-          title: "Scan",
-
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons
-              name="qr-code-scanner"
-              size={size}
+          title: 'Scan',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'qr-code' : 'qr-code-outline'}
               color={color}
+              size={24}
             />
           ),
         }}
       />
-
       <Tabs.Screen
         name="history"
         options={{
-          title: "History",
-
-          tabBarIcon: ({ color, size }) => (
+          title: 'History',
+          tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name="time-outline"
-              size={size}
+              name={focused ? 'time' : 'time-outline'}
               color={color}
+              size={24}
             />
           ),
         }}
       />
-
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Profile",
-
-          tabBarIcon: ({ color, size }) => (
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name="person-outline"
-              size={size}
+              name={focused ? 'person' : 'person-outline'}
               color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="teacher"
+        options={{
+          title: 'Teacher',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'clipboard' : 'clipboard-outline'}
+              color={color}
+              size={24}
             />
           ),
         }}
