@@ -5,11 +5,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#ffd33d',
-        headerStyle: { backgroundColor: '#25292e' },
+        tabBarActiveTintColor: '#3766f1',
+        headerStyle: { backgroundColor: '#262cd9' },
         headerShadowVisible: false,
-        headerTintColor: '#fff',
-        tabBarStyle: { backgroundColor: '#25292e' },
+        headerTintColor: '#262cd9',
+        tabBarStyle: { backgroundColor: '#262cd9' },
       }}
     >
       <Tabs.Screen
@@ -51,7 +51,22 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
+  name="teacher"
+  options={{
+    title: 'Teacher',
+    tabBarIcon: ({ color, focused }) => (
+      <Ionicons
+        name={focused ? 'clipboard' : 'clipboard-outline'}
+        color={color}
+        size={24}
+      />
+    ),
+  }}
+/>
+
+       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
@@ -61,22 +76,11 @@ export default function TabLayout() {
               color={color}
               size={24}
             />
+
           ),
         }}
       />
-      <Tabs.Screen
-        name="teacher"
-        options={{
-          title: 'Teacher',
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? 'clipboard' : 'clipboard-outline'}
-              color={color}
-              size={24}
-            />
-          ),
-        }}
-      />
+
     </Tabs>
   );
 }
